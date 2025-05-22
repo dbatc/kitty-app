@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Button } from "@/components/ui/button";
+import { Button } from "@heroui/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -64,8 +64,7 @@ export default function Home() {
           </a>
         </div>
 
-        <p>Testing shadcn button</p>
-        <Button variant={"outline"}>I'm a shadcn button</Button>
+        <Button>Click me</Button>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
