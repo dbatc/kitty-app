@@ -1,5 +1,7 @@
 import "@/styles/globals.css";
 import { HeroUIProvider } from "@heroui/react";
+import { Auth0Provider } from "@auth0/nextjs-auth0";
+
 import type { AppProps } from "next/app";
 
 export default function App({
@@ -7,8 +9,10 @@ export default function App({
   pageProps: { session, ...pageProps },
 }: AppProps) {
   return (
-    <HeroUIProvider>
-      <Component {...pageProps} />
-    </HeroUIProvider>
+    <Auth0Provider>
+      <HeroUIProvider>
+        <Component {...pageProps} />
+      </HeroUIProvider>
+    </Auth0Provider>
   );
 }

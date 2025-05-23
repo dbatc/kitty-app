@@ -3,51 +3,35 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Link,
   DropdownItem,
   DropdownTrigger,
   Dropdown,
   DropdownMenu,
   Avatar,
+  Button,
 } from "@heroui/react";
+import Link from "next/link";
 
-import { useUser } from "@auth0/nextjs-auth0";
-
-export const AcmeLogo = () => {
-  return (
-    <svg fill="none" height="36" viewBox="0 0 32 32" width="36">
-      <path
-        clipRule="evenodd"
-        d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
-        fill="currentColor"
-        fillRule="evenodd"
-      />
-    </svg>
-  );
-};
-
-export default function NavBar() {
-  const { user, isLoading } = useUser();
+export default function NavBar({ user }) {
   return (
     <Navbar isBordered>
       <NavbarContent justify="start">
         <NavbarBrand className="mr-4">
-          <AcmeLogo />
           <p className="hidden sm:block font-bold text-inherit">Kitty App</p>
         </NavbarBrand>
-        <NavbarContent className="hidden sm:flex gap-3">
-          <NavbarItem>
-            <Link color="foreground" href="#">
+        <NavbarContent className="hidden sm:flex gap-8">
+          <NavbarItem isActive>
+            <Link aria-current="page" color="secondary" href="/">
               Home
             </Link>
           </NavbarItem>
-          <NavbarItem isActive>
-            <Link aria-current="page" color="secondary" href="#">
+          <NavbarItem>
+            <Link color="foreground" href="/adoptKitty">
               Adopt a Kitty
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="#">
+            <Link color="foreground" href="/lostKitties">
               Lost Kitties
             </Link>
           </NavbarItem>
@@ -92,7 +76,11 @@ export default function NavBar() {
         )}
         {!user && (
           <NavbarItem>
-            <Link href="/login">Login</Link>
+            <Button color="danger">
+              <Link href="/login">
+                <h1 className="text-white text-sm font-bold">Login</h1>
+              </Link>
+            </Button>
           </NavbarItem>
         )}
       </NavbarContent>
