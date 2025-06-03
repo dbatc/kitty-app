@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.13.8",
+    "@apollo/server": "^4.12.1",
     "@auth0/nextjs-auth0": "^4.6.0",
     "@heroui/navbar": "^2.2.17",
     "@heroui/react": "^2.7.8",
     "@supabase/supabase-js": "^2.49.8",
+    "apollo-server-micro": "^3.13.0",
     "bcrypt": "^6.0.0",
     "framer-motion": "^12.12.1",
     "graphql": "^16.11.0",
