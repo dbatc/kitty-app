@@ -13,7 +13,7 @@ export default function AllKitties() {
     );
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mx-24">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mx-24 mt-10">
       {data?.cats?.map((cat: any) => (
         <CatCard
           key={cat.id}
