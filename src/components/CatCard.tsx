@@ -56,12 +56,13 @@ export default function CatCard({
           {breed?.temperament || "No temperament info"}
         </small>
       </CardHeader>
-      <CardBody className="overflow-visible py-2">
+      <CardBody className="overflow-visible py-2 justify-center">
         <Image
           alt={`${breed?.name || "Cat"} image`}
-          className="object-cover rounded-xl"
+          className="object-cover rounded-xl mx-auto"
           src={cat.url}
-          width={370}
+          srcSet={cat.url}
+          width={570}
           height={270}
         />
       </CardBody>

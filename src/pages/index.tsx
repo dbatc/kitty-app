@@ -19,7 +19,7 @@ export default function Home({ user }: { user: any }) {
     <div>
       <NavBar user={user} />
       {user ? (
-        <div className="w-[80%] mx-auto">
+        <div className="w-[90%] max-w-6xl mx-auto">
           <AllKitties />
         </div>
       ) : (
